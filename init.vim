@@ -8,6 +8,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
 " Vim-Plug
 call plug#begin("~/.local/share/nvim/plugged/")
 
@@ -23,4 +30,3 @@ let g:ale_linters = {
 \}  "flake8 also available for Python
 
 filetype plugin indent on    " required
-
