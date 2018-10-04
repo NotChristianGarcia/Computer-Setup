@@ -17,7 +17,7 @@ run with
 chmod u+x nvim.appimage
 ./nvim.appimage
 ~~~~
-Rename image to nvim (or don't) and move to usr/local/bin or whichever bin.
+Rename image to nvim (or don't) and move it to usr/local/bin or whichever bin.
   
 #### Neovim True Install - Ubuntu
 To check versions
@@ -38,7 +38,7 @@ Nvim should be installed in .local/share/nvim/
 ~~~~
 git clone https://github.com/NotChristianGarcia/nvim.git
 ~~~~
-Repo should be placed in ~/.config/nvim/
+Repo should be placed in ~/.config/nvim/\
 Enter Nvim for initial install of vim-plug and plugins
 
 #### Alias alternatives to nvim
