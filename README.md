@@ -1,5 +1,5 @@
-# Nvim-Config
-Stores NVim Init for ease of re-installation in new places.  
+# Neovim Quick Installation and Initialization
+This is a quick guide to easily install Neovim on different platforms in different ways with my own config files on different computers.  
   
 ## Installation Instructions
 ### Linux
