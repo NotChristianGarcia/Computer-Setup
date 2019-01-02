@@ -11,7 +11,10 @@ aptitude install git python3 python3-pip chromium-browser ipython3 neovim nordvp
 aptitude install wine64 winetricks
 
 # Cloning nvim stuff
-git clone https://github.com/NotChristianGarcia/nvim.git ~/.config/nvim
+SET NVIM STUFF
+
+# Zsh Stuff
+chsh -s /bin/zsh;
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
