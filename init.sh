@@ -5,13 +5,28 @@ aptitude update
 aptitude upgrade
 
 # Install other stuff
-aptitude install git python3 python3-pip chromium-browser ipython3 neovim nordvpn zsh
+aptitude install git
+                 python3
+                 python3-pip
+                 chromium-browser
+                 ipython3
+                 neovim
+                 nordvpn
+                 zsh
+                 gnome-tweaks
+                 numix-gtk-theme
+
+# Set Gnome to Numix theme
+gsettings set org.gnome.desktop.interface gtk-theme "Numix"
+gsettings set org.gnome.desktop.wm.preferences theme "Numix"
 
 # Extra installs
-aptitude install wine64 winetricks
+aptitude install wine64
+                 winetricks
 
-# Cloning nvim stuff
-SET NVIM STUFF
+# Setting nvim config
+cp -r ./nvim ~/.config/nvim
+echo :wq | nvim
 
 # Zsh Stuff
 chsh -s /bin/zsh;
