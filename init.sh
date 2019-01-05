@@ -5,23 +5,25 @@ aptitude update
 aptitude upgrade
 
 # Install other stuff
-aptitude install git
-                 python3
-                 python3-pip
-                 chromium-browser
-                 ipython3
-                 neovim
-                 nordvpn
-                 zsh
-                 gnome-tweaks
-                 numix-gtk-theme
+aptitude install git\
+                 python3\
+                 python3-pip\
+                 chromium-browser\
+                 ipython3\
+                 neovim\
+                 nordvpn\
+                 zsh\
+                 curl\
+                 gnome-tweaks\
+                 numix-gtk-theme\
+                 -y
 
 # Set Gnome to Numix theme
 gsettings set org.gnome.desktop.interface gtk-theme "Numix"
 gsettings set org.gnome.desktop.wm.preferences theme "Numix"
 
 # Extra installs
-aptitude install wine64
+aptitude install wine64\
                  winetricks
 
 # Setting nvim config
