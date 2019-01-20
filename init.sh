@@ -18,6 +18,13 @@ aptitude install git\
                  numix-gtk-theme\
                  -y
 
+pip3 install bs4\
+			 requests\
+			 Flask\
+			 hotqueue\
+			 redis\
+			 selenium
+
 # Set Gnome to Numix theme
 gsettings set org.gnome.desktop.interface gtk-theme "Numix"
 gsettings set org.gnome.desktop.wm.preferences theme "Numix"
