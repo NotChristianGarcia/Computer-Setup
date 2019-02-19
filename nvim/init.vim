@@ -29,18 +29,4 @@ let g:ale_linters = {
 \   'python': ['pylint'],
 \}  "flake8 also available for Python
 
-let g:ale_python_pylint_options = "--extension-pkg-whitelist=cv2 
-		\ --module-naming-style=camelCase
-		\ --const-naming-style=camelCase
-		\ --class-naming-style=camelCase
-		\ --function-naming-style=camelCase
-		\ --method-naming-style=camelCase
-		\ --attr-naming-style=camelCase
-		\ --argument-naming-style=camelCase
-		\ --variable-naming-style=camelCase
-		\ --class-attribute-naming-style=camelCase
-		\ --inlinevar-naming-style=camelCase"
-
-
-
 filetype plugin indent on    " required
