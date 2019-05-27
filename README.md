@@ -17,3 +17,6 @@ Windows Neccessities
 	Pip install pylint  
 	Install VSCode  
 	Settings, add terminal.argpath add Cmder cmd init.bat  
+
+
+https://mayccoll.github.io/Gogh/#0
