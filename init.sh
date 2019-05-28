@@ -25,6 +25,10 @@ aptitude install\
 	-y
 
 
+### Install Docker
+./docker.sh
+
+
 ### Initializing neovim
 echo "Initializing neovim."
 cp -a ./configs/nvim ~/.config/nvim
