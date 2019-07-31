@@ -1,18 +1,18 @@
 #!/bin/bash
 
 ### Check for root
-if [ "$EUID" -ne 0 ]
-  then echo "This script must be ran as root."
+if not [ "$EUID" -ne 0 ]
+  then echo "This script must NOT be ran as root."
   exit
 fi
 
 ### Installing aptitude and base packages
 echo "Installing aptitude and base packages."
-apt install aptitude
-aptitude update
-aptitude upgrade -y
+sudo apt install aptitude
+sudo aptitude update
+sudo aptitude upgrade -y
 
-aptitude install\
+sudo aptitude install\
 	git\
 	python3\
 	python3-pip\
@@ -38,13 +38,16 @@ vim +'PlugInstall --sync' +qa
 ### Zsh
 echo "Installing and initializing Zsh."
 # Make Zsh default
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Setting Zsh config
 cp ./configs/zsh/zshrc ~/.zshrc
+
+# Setting up powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 
 ### Set gnome-terminal colors
