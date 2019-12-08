@@ -3,5 +3,11 @@
 # Make it so that this update things both grabs new info from output locations and updates folder content
 # and also grabs folder content and updates output location if needed.
 
-cp -a ~/.config/nvim ./configs
-cp ~/.zshrc ./configs/zsh/zshrc
+# Neovim
+cp -r ~/.config/nvim ./configs
+
+# Zsh
+cp ~/.zshrc ./configs/zshrc
+
+# tmux
+cp ~/.tmux.conf ./configs/tmux.conf

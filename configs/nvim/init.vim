@@ -4,6 +4,10 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4 " when indenting with '>', use 4 spaces width
 
+
+" Allow mouse!
+set mouse=a
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 

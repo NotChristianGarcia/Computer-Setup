@@ -1,5 +1,11 @@
 #!/bin/bash
 
+### Check for root
+if not [ "$EUID" -ne 0 ]
+	then echo "This script must NOT be ran as root"
+	exit
+fi
+
 ### Installing aptitude and base packages
 echo "Initializing aptitude and base packages."
 sudo apt-get install aptitude
@@ -17,7 +23,9 @@ sudo aptitude install\
 ins_docker () {
 	echo "Initializing docker."
 
-	./component/docker.sh
+	snap install docker
+	groupadd docker
+	usermod -aG docker $USER
 }
 
 ### neovim
