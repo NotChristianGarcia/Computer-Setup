@@ -33,7 +33,7 @@ ins_neovim () {
 	echo "Initializing neovim."
 
 	sudo aptitude install neovim -y
-	cp -a ./configs/nvim ~/.config/nvim
+	cp -a ./configs/nvim ~/.config
 	nvim +'PlugInstall --sync' +qa
 }
 
@@ -70,7 +70,7 @@ ins_zsh () {
 updates () {
 	cp ./configs/zshrc ~/.zshrc
 	cp ./configs/tmux.conf ~/.tmux.conf
-	cp -a ./configs/nvim ~/.config/nvim
+	cp -a ./configs/nvim ~/.config
 }
 
 
