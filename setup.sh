@@ -33,7 +33,7 @@ ins_neovim () {
 	echo "Initializing neovim."
 
 	sudo aptitude install neovim -y
-	cp -a ./configs/nvim ~/.config
+	cp ./configs/nvim ~/.config
 	nvim +'PlugInstall --sync' +qa
 }
 
