@@ -5,8 +5,8 @@
 ins_aptitudeStart () {
 	echo "Initializing aptitude and base packages."
 
-	sudo apt-get install aptitude
-	sudo aptitude update
+	sudo apt-get install aptitude -y
+	sudo aptitude update -y
 	sudo aptitude upgrade -y
 
 	sudo aptitude install\
@@ -59,6 +59,9 @@ ins_zsh () {
 	# Install Oh-My-Zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+        # Exit Zsh to complete stuff
+	exit
+
 	# Setting Zsh config
 	cp ./configs/zshrc ~/.zshrc
 
@@ -91,18 +94,26 @@ sync () {
 #	exit
 #fi
 
-
 ### Run Things
-if [ $0 == "init" ]
+if [ $# -eq 0 ]
 	then
+		echo "Doing nothing, specify 'init', 'sync', or 'update' to run."
+elif [ $1 = "init" ]
+	then
+		echo "Initializing computer"
 		ins_aptitudeStart
 		ins_docker
 		ins_neovim
 		ins_tmux
 		ins_zsh
-elif [ $0 == "sync" ]
+elif [ $1 = "sync" ]
 	then
+		echo "Updating git configs with configs from computer."
 		sync
+elif [ $1 = "update" ]
+	then
+		echo "Updating configs on computer."
+		updates
 else
-	updates
+	echo "Arg must be 'init', 'sync', or 'update'."
 fi
