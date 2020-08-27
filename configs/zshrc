@@ -1,5 +1,13 @@
 [[ $TERM != "screen" ]] && exec tmux
 
+### Windows Bit
+eval $(ssh-agent -s) > /dev/null 2>&1;
+ssh-add -k ~/.ssh/git > /dev/null 2>&1;
+ssh-add -k ~/.ssh/jenkins-prod > /dev/null 2>&1;
+sudo ~/.local/bin/start_services.sh > /dev/null 2>&1;
+
+export DISPLAY="localhost:0"
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin/
 
@@ -14,6 +22,7 @@ export ZSH="/home/trust/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+HISTSIZE=10000
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
