@@ -21,6 +21,7 @@
         "defaults":
         {
             // Put settings here that you want to apply to all profiles.
+            "scrollbarState": "hidden"
         },
         "list":
         [
@@ -50,7 +51,8 @@
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\trust",
-                "colorScheme": "Monokai"
+                "colorScheme": "Monokai",
+                "padding": "4, 4, 4, 4"
             }
         ]
     },
