@@ -1,4 +1,4 @@
-## Automated Computer Setup
+## Computer Setup
 **Description:**  
 This is my repo to setup new installs. Works with Windows or Linux. Confs kept here.
 
