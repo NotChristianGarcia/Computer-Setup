@@ -1,10 +1,16 @@
 [[ $TERM != "screen" ]] && exec tmux
 
+
+
 ### Windows Bit
-eval $(ssh-agent -s) > /dev/null 2>&1;
-ssh-add -k ~/.ssh/git > /dev/null 2>&1;
-ssh-add -k ~/.ssh/jenkins-prod > /dev/null 2>&1;
-sudo ~/.local/bin/start_services.sh > /dev/null 2>&1;
+# Note:
+# 2>&1 > /dev/null sends stdout to null, stderr goes to stdout (which is null)
+# > /dev/null 2>&1 sends stderr to the stdout address, and stdout to null (so you only get errors)
+# ssh-add -q flag silences successful operations
+eval $(ssh-agent -s) 2>&1 > /dev/null;
+ssh-add -kq ~/.ssh/git
+ssh-add -kq ~/.ssh/jenkins-prod
+sudo ~/.local/bin/start_services.sh 2>&1 > /dev/null;
 
 export DISPLAY="localhost:0"
 

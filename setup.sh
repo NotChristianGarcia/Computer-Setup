@@ -24,8 +24,8 @@ init_docker () {
 	sudo aptitude update
 	sudo aptitude install docker-ce -y
 
-	groupadd docker
-	usermod -aG docker $USER
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
 }
 
 init_docker-compose () {
@@ -133,7 +133,8 @@ push_all () {
 #### Windows Functions - Setting up whatever we need to work on WSL2
 windows_docker () {
 	mkdir -p ~/.local/bin
-	echo "sudo service docker start" > ~/.local/bin/start_services.sh
+	echo 'sudo service docker start' > ~/.local/bin/start_services.sh
+	sudo chmod +x ~/.local/bin/start_services.sh
 	echo "$USER ALL=NOPASSWD: /home/$USER/.local/bin/start_services.sh" | sudo EDITOR='tee -a' visudo
 }
 
@@ -144,10 +145,10 @@ windows_jupyter () {
 
 	# Modifying said config (I think it should always be in this place, maybe not?)
 	# Add browser to use (Using Firefox as default)
-	sed -i "s/#c.NotebookApp.browser = ''/c.NotebookApp.browser = u'\/mnt\/c\/Program\\\ Files\/Mozilla\\\ Firefox\/firefox.exe %s'/g" ~/.jupyter/jupyter_notebook_config.py
+	sed -i "s/# c.ServerApp.browser = ''/c.ServerApp.browser = u'\/mnt\/c\/Program\\\ Files\/Mozilla\\\ Firefox\/firefox.exe %s'/g" ~/.jupyter/jupyter_lab_config.py
 
 	# Say that you don't want redirect file but url served to browser. *file is default but uses unix path, not windows, so broken
-	sed -i "s/#c.NotebookApp.use_redirect_file = True/c.NotebookApp.use_redirect_file = False/g" ~/.jupyter/jupyter_notebook_config.py
+	sed -i "s/# c.ServerApp.use_redirect_file = True/c.ServerApp.use_redirect_file = False/g" ~/.jupyter/jupyter_lab_config.py
 }
 
 windows_all () {
