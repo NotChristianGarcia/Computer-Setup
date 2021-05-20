@@ -133,9 +133,9 @@ push_all () {
 #### Windows Functions - Setting up whatever we need to work on WSL2
 windows_docker () {
 	mkdir -p ~/.local/bin
-	echo 'sudo service docker start' > ~/.local/bin/start_services.sh
-	sudo chmod +x ~/.local/bin/start_services.sh
-	echo "$USER ALL=NOPASSWD: /home/$USER/.local/bin/start_services.sh" | sudo EDITOR='tee -a' visudo
+	printf 'sudo service docker start\nsudo echo "nameserver 8.8.4.4" >> /etc/resolv.conf' > ~/.local/bin/start_stuff_up.sh
+	sudo chmod +x ~/.local/bin/start_stuff_up.sh
+	echo "$USER ALL=NOPASSWD: /home/$USER/.local/bin/start_stuff_up.sh" | sudo EDITOR='tee -a' visudo
 }
 
 windows_jupyter () {
