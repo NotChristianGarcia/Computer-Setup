@@ -10,7 +10,7 @@
 eval $(ssh-agent -s) 2>&1 > /dev/null;
 ssh-add -kq ~/.ssh/git
 ssh-add -kq ~/.ssh/jenkins-prod
-sudo ~/.local/bin/start_services.sh 2>&1 > /dev/null;
+sudo ~/.local/bin/start_stuff_up.sh 2>&1 > /dev/null;
 
 export DISPLAY="localhost:0"
 
