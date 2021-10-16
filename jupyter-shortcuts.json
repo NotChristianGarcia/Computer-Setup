@@ -1,0 +1,12 @@
+{
+    "shortcuts": [
+        {
+            "command": "notebook:clear-cell-output",
+            "keys": [
+                "F",
+                "F"
+            ],
+            "selector": ".jp-Notebook:focus"
+        }
+    ]
+}
